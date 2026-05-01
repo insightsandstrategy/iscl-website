@@ -6,7 +6,6 @@ import Projects from "@/components/sections/Projects";
 import Trust from "@/components/sections/Trust";
 import CTA from "@/components/sections/CTA";
 import Audience from "@/components/sections/Audience";
-import Solutions from "@/components/sections/Solutions";
 import Resources from "@/components/sections/Resources";
 
 export default function Home() {
