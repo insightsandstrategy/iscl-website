@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="w-full bg-[#000066] border-b border-white/10 sticky top-0 z-50">
+    <header className="w-full bg-[#000066]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
         {/* Logo */}
@@ -20,27 +21,41 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Nav */}
-        <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white/80">
+        {/* RIGHT NAV */}
+        <nav className="hidden md:flex items-center gap-10 ml-auto text-sm font-medium text-white/80">
 
-          <Link href="/services" className="hover:text-[#FEC619] transition">
-            Services
+          <Link
+            href="/"
+            className="hover:text-[#FEC619] transition"
+          >
+            Home
           </Link>
 
-          <Link href="/projects" className="hover:text-[#FEC619] transition">
-            Projects
-          </Link>
-
-          <Link href="/about" className="hover:text-[#FEC619] transition">
+          <Link
+            href="/about"
+            className="hover:text-[#FEC619] transition"
+          >
             About
           </Link>
 
-          <Link href="/contact" className="hover:text-[#FEC619] transition">
-            Contact
+          <Link
+            href="/services"
+            className="hover:text-[#FEC619] transition"
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/projects"
+            className="hover:text-[#FEC619] transition"
+          >
+            Project
           </Link>
 
         </nav>
+
       </div>
+
     </header>
   );
 }

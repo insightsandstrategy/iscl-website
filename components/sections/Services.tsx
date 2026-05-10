@@ -1,95 +1,186 @@
-"use client";
+import {
+  Briefcase,
+  Landmark,
+  GraduationCap,
+  HeartPulse,
+  Tractor,
+  Cpu,
+  ShieldCheck,
+  Clapperboard,
+  FileText,
+} from "lucide-react";
 
-import Image from "next/image";
+const sectors = [
+  {
+    title: "NGOs/\nDevelopment\nSector",
+    icon: Briefcase,
+  },
+  {
+    title: "Public\nPolicy",
+    icon: FileText,
+  },
+  {
+    title: "Governance\n& Politics",
+    icon: Landmark,
+  },
+  {
+    title: "Education\n& Academia",
+    icon: GraduationCap,
+  },
+  {
+    title: "Health\nEconomics\n& Policy",
+    icon: HeartPulse,
+  },
+  {
+    title: "Agriculture &\nAgro Business",
+    icon: Tractor,
+  },
+  {
+    title: "Tech &\nStart-Ups",
+    icon: Cpu,
+  },
+  {
+    title: "Security &\nGender",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Entertainment &\nMedia",
+    icon: Clapperboard,
+  },
+];
 
-export default function Services() {
-  const services = [
-    {
-      title: "Research & Data Collection",
-      desc: "Design surveys, polling, and field research to generate reliable insights.",
-      color: "bg-[#1E3A8A]", // controlled blue (not random)
-      img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-    },
-    {
-      title: "Monitoring, Evaluation & Learning",
-      desc: "Measure impact and improve program performance with structured frameworks.",
-      color: "bg-[#166534]", // deep green (more professional)
-      img: "https://images.unsplash.com/photo-1552664730-d307ca884978",
-    },
-    {
-      title: "Data Analytics & Insights",
-      desc: "Turn complex datasets into clear, actionable insights.",
-      color: "bg-[#FEC619]", // brand yellow
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    },
-    {
-      title: "Strategy & Advisory",
-      desc: "Guide policy and strategic decisions using data-driven insights.",
-      color: "bg-[#EA580C]", // controlled orange (less harsh)
-      img: "https://images.unsplash.com/photo-1556761175-b413da4baf72",
-    },
-  ];
-
+export default function Sectors() {
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-20 bg-[#F7F7F7] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* HEADER */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-center text-[#000066]">
-          For NGOs, Governments, and Development Partners:
-        </h2>
+        {/* Top Blue Bar */}
+        <div className="h-6 bg-[#0B3AA4] w-full"></div>
 
-        {/* GRID */}
-        <div className="mt-14 grid md:grid-cols-2 gap-8">
-          {services.map((s, i) => (
-            <div
-              key={i}
-              className="group grid md:grid-cols-2 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              {/* TEXT SIDE */}
-              <div className={`${s.color} p-8 flex flex-col justify-between`}>
-                <div>
-                  <h3
-                    className={`font-semibold text-lg ${
-                      s.color === "bg-[#FEC619]"
-                        ? "text-black"
-                        : "text-white"
-                    }`}
-                  >
-                    {s.title}
-                  </h3>
+        {/* Heading */}
+        <div className="-mt-2 inline-block bg-[#0B3AA4] px-10 py-6 rounded-b-[40px] rounded-tr-[40px]">
 
-                  <p
-                    className={`mt-3 text-sm ${
-                      s.color === "bg-[#FEC619]"
-                        ? "text-black/80"
-                        : "text-white/90"
-                    }`}
-                  >
-                    {s.desc}
-                  </p>
-                </div>
+          <h2 className="text-4xl md:text-5xl font-black text-white">
+            SECTORS WE SERVE
+          </h2>
 
-                <button className="mt-6 bg-white text-[#000066] px-4 py-2 rounded-md text-sm font-medium w-fit hover:scale-105 transition">
-                  Request Service
-                </button>
-              </div>
+          <div className="w-28 h-1 bg-[#FEC619] mt-5 mx-auto rounded-full"></div>
 
-              {/* IMAGE SIDE */}
-              <div className="relative h-[220px] md:h-full overflow-hidden">
-                <Image
-                  src={s.img}
-                  alt={s.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-500"
-                />
-
-                {/* subtle overlay for consistency */}
-                <div className="absolute inset-0 bg-[#000066]/10" />
-              </div>
-            </div>
-          ))}
         </div>
+
+        {/* Diagram */}
+        <div className="mt-20 relative">
+
+          {/* Row 1 */}
+          <div className="grid md:grid-cols-3 gap-12">
+
+            {sectors.slice(0, 3).map((sector, index) => {
+              const Icon = sector.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="relative flex items-center"
+                >
+
+                  {/* Icon Circle */}
+                  <div className="absolute -left-5 z-10 w-20 h-20 rounded-full bg-[#0B3AA4] border-4 border-[#7C93D6] flex items-center justify-center shadow-lg">
+
+                    <Icon className="text-white w-9 h-9" />
+
+                  </div>
+
+                  {/* Card */}
+                  <div className="bg-[#0B3AA4] rounded-[24px] py-6 pl-20 pr-8 w-full shadow-md">
+
+                    <h3 className="text-white text-2xl font-bold leading-tight whitespace-pre-line">
+                      {sector.title}
+                    </h3>
+
+                  </div>
+
+                </div>
+              );
+            })}
+
+          </div>
+
+          {/* Connector */}
+          <div className="hidden md:block w-full h-[2px] bg-[#7C93D6] mt-[-70px]"></div>
+
+          {/* Row 2 */}
+          <div className="grid md:grid-cols-3 gap-12 mt-20">
+
+            {sectors.slice(3, 6).map((sector, index) => {
+              const Icon = sector.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="relative flex items-center"
+                >
+
+                  {/* Icon Circle */}
+                  <div className="absolute -left-5 z-10 w-20 h-20 rounded-full bg-[#0B3AA4] border-4 border-[#7C93D6] flex items-center justify-center shadow-lg">
+
+                    <Icon className="text-white w-9 h-9" />
+
+                  </div>
+
+                  {/* Card */}
+                  <div className="bg-[#0B3AA4] rounded-[24px] py-6 pl-20 pr-8 w-full shadow-md">
+
+                    <h3 className="text-white text-2xl font-bold leading-tight whitespace-pre-line">
+                      {sector.title}
+                    </h3>
+
+                  </div>
+
+                </div>
+              );
+            })}
+
+          </div>
+
+          {/* Connector */}
+          <div className="hidden md:block w-full h-[2px] bg-[#7C93D6] mt-[-70px]"></div>
+
+          {/* Row 3 */}
+          <div className="grid md:grid-cols-3 gap-12 mt-20">
+
+            {sectors.slice(6, 9).map((sector, index) => {
+              const Icon = sector.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="relative flex items-center"
+                >
+
+                  {/* Icon Circle */}
+                  <div className="absolute -left-5 z-10 w-20 h-20 rounded-full bg-[#0B3AA4] border-4 border-[#7C93D6] flex items-center justify-center shadow-lg">
+
+                    <Icon className="text-white w-9 h-9" />
+
+                  </div>
+
+                  {/* Card */}
+                  <div className="bg-[#0B3AA4] rounded-[24px] py-6 pl-20 pr-8 w-full shadow-md">
+
+                    <h3 className="text-white text-2xl font-bold leading-tight whitespace-pre-line">
+                      {sector.title}
+                    </h3>
+
+                  </div>
+
+                </div>
+              );
+            })}
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

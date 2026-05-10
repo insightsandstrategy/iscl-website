@@ -1,67 +1,125 @@
 export default function Process() {
   return (
-    <section className="bg-gray-50 py-10">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="py-24 bg-[#F8F9FC] overflow-hidden">
+
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* HEADER */}
-        <h2 className="text-3xl font-semibold text-[#000066]">
-          How We Work
-        </h2>
+        <div className="text-center max-w-3xl mx-auto">
 
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-          Our structured approach ensures clarity, accuracy, and measurable impact at every stage.
-        </p>
+          <p className="text-[#000066] uppercase tracking-[0.3em] text-sm font-semibold">
+            Our Approach
+          </p>
 
-        {/* STEPS */}
-        <div className="mt-16 grid md:grid-cols-4 gap-10">
+          <h2 className="mt-4 text-4xl md:text-5xl font-black text-[#000066] leading-tight">
+            A Structured Path from
+            <br />
+            Insight to Impact
+          </h2>
 
-          {/* STEP 1 */}
-          <div>
-            <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-[#000066] text-white font-bold">
-              1
+          <div className="w-24 h-1 bg-[#FEC619] mx-auto rounded-full mt-6"></div>
+
+        </div>
+
+        {/* PROCESS */}
+        <div className="mt-20 relative">
+
+          {/* Connection Line */}
+          <div className="hidden lg:block absolute top-10 left-0 w-full h-[2px] bg-[#000066]/10"></div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 relative">
+
+            {/* STEP 1 */}
+            <div className="relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100">
+
+              <div className="w-20 h-20 rounded-full bg-[#000066] text-white flex items-center justify-center text-2xl font-black shadow-lg">
+                01
+              </div>
+
+              <h3 className="mt-8 text-2xl font-bold text-[#000066]">
+                Diagnose
+              </h3>
+
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Landscape analysis, stakeholder mapping, needs assessment
+              </p>
+
             </div>
-            <h3 className="mt-6 font-semibold text-lg">Discovery</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              We understand your goals, challenges, and data needs.
-            </p>
-          </div>
 
-          {/* STEP 2 */}
-          <div>
-            <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-[#000066] text-white font-bold">
-              2
-            </div>
-            <h3 className="mt-6 font-semibold text-lg">Data Collection</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              We gather high-quality data using proven methodologies.
-            </p>
-          </div>
+            {/* STEP 2 */}
+            <div className="relative bg-[#000066] rounded-3xl p-8 shadow-xl text-white hover:scale-[1.02] transition duration-300">
 
-          {/* STEP 3 */}
-          <div>
-            <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-[#000066] text-white font-bold">
-              3
-            </div>
-            <h3 className="mt-6 font-semibold text-lg">Analysis</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              We transform data into meaningful insights and recommendations.
-            </p>
-          </div>
+              <div className="w-20 h-20 rounded-full bg-[#FEC619] text-[#000066] flex items-center justify-center text-2xl font-black shadow-lg">
+                02
+              </div>
 
-          {/* STEP 4 */}
-          <div>
-            <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-[#000066] text-white font-bold">
-              4
+              <h3 className="mt-8 text-2xl font-bold">
+                Design
+              </h3>
+
+              <p className="mt-4 text-white/80 leading-relaxed">
+                Methodology development, tool design, sampling frameworks
+              </p>
+
             </div>
-            <h3 className="mt-6 font-semibold text-lg">Delivery</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              We present actionable results to support strategic decisions.
-            </p>
+
+            {/* STEP 3 */}
+            <div className="relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100">
+
+              <div className="w-20 h-20 rounded-full bg-[#000066] text-white flex items-center justify-center text-2xl font-black shadow-lg">
+                03
+              </div>
+
+              <h3 className="mt-8 text-2xl font-bold text-[#000066]">
+                Implement
+              </h3>
+
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Field deployment, data collection (CAPI/CATI/CAWI), quality assurance
+              </p>
+
+            </div>
+
+            {/* STEP 4 */}
+            <div className="relative bg-[#FEC619] rounded-3xl p-8 shadow-xl hover:scale-[1.02] transition duration-300">
+
+              <div className="w-20 h-20 rounded-full bg-[#000066] text-white flex items-center justify-center text-2xl font-black shadow-lg">
+                04
+              </div>
+
+              <h3 className="mt-8 text-2xl font-bold text-[#000066]">
+                Analyse
+              </h3>
+
+              <p className="mt-4 text-[#000066]/80 leading-relaxed">
+                Statistical analysis, data visualisation, pattern recognition
+              </p>
+
+            </div>
+
+            {/* STEP 5 */}
+            <div className="relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100">
+
+              <div className="w-20 h-20 rounded-full bg-[#000066] text-white flex items-center justify-center text-2xl font-black shadow-lg">
+                05
+              </div>
+
+              <h3 className="mt-8 text-2xl font-bold text-[#000066]">
+                Learn
+              </h3>
+
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Evidence synthesis, recommendations, knowledge transfer
+              </p>
+
+            </div>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
   );
 }

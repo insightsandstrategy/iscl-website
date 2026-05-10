@@ -5,11 +5,12 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[65vh]">
+    <section className="relative overflow-hidden min-h-[70vh]">
+
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1556761175-b413da4baf72"
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
           alt="ISCL Team"
           fill
           priority
@@ -17,38 +18,43 @@ export default function Hero() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-[#000066]/75" />
+        <div className="absolute inset-0 bg-[#000066]/80" />
 
         {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000066]/60 via-[#000066]/70 to-[#000066]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000066]/60 via-[#000066]/75 to-[#000066]/95" />
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-14 md:pt-24 md:pb-16 grid md:grid-cols-2 gap-8 items-center">
-        
+      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-20 grid md:grid-cols-2 gap-10 items-center">
+
         {/* LEFT */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Empowering Decisions Through{" "}
-            <span className="text-[#FEC619]">Data-Driven</span> Insights
-          </h1>
 
-          <p className="mt-5 text-gray-300 max-w-lg">
-            We help NGOs, governments, and organizations turn research and data
-            into actionable strategies.
+          <p className="uppercase tracking-[0.25em] text-[#FEC619] text-sm font-semibold">
+            Insights & Strategy Consulting Limited
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-4">
+          <h1 className="mt-5 text-4xl md:text-6xl font-bold text-white leading-tight">
+            Empowering Policies, Economy & Development Through Insights
+          </h1>
 
-  <Link href="/contact/start-project">
+          <p className="mt-6 text-gray-300 max-w-xl leading-relaxed text-lg">
+            Polling | Monitoring & Evaluation | Research | Surveys | RCTs |
+            Programme & Project Management | Training & Capacity Building |
+            Entrepreneurship & Tech Consulting | Development Science Advisory
+          </p>
+
+         <div className="mt-7 flex flex-wrap gap-4">
+
+  <Link href="/training-calendar">
     <button className="bg-[#FEC619] text-[#000066] px-6 py-3 rounded-md font-semibold hover:opacity-90 transition">
-      Start a Project
+      Training Calendar
     </button>
   </Link>
 
-  <Link href="/contact/apply">
+  <Link href="/contact">
     <button className="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-[#000066] transition">
-      Apply for Services →
+      Request for Consultation →
     </button>
   </Link>
 
@@ -56,35 +62,40 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-      <div className="relative flex justify-center">
+        <div className="relative flex justify-center">
 
-  {/* Background shape (adds structure like Humentum) */}
-  <div className="absolute w-[110%] h-[110%] bg-white/5 rounded-3xl blur-2xl" />
+          {/* Background Glow */}
+          <div className="absolute w-[115%] h-[115%] bg-white/5 rounded-3xl blur-3xl" />
 
-  {/* Main card */}
-  <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-    <Image
-      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-      alt="Analytics Dashboard"
-      width={440}
-      height={270}
-      className="rounded-xl"
-    />
-  </div>
+          {/* Main Card */}
+          <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-4 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
 
-  {/* Floating card 1 */}
-  <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-lg shadow-md text-xs">
-    <p className="text-gray-500 leading-none">Growth</p>
-    <p className="font-semibold text-[#000066] text-sm">+24%</p>
-  </div>
+            <Image
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              alt="Analytics Dashboard"
+              width={500}
+              height={320}
+              className="rounded-2xl"
+            />
+          </div>
 
-  {/* Floating card 2 */}
-  <div className="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg shadow-md text-xs">
-    <p className="text-gray-500 leading-none">Insights</p>
-    <p className="font-semibold text-[#000066] text-sm">1.2K+</p>
-  </div>
+          {/* Floating Card 1 */}
+          <div className="absolute top-2 left-2 bg-white px-5 py-3 rounded-xl shadow-lg">
+            <p className="text-gray-500 text-sm">Research Reach</p>
+            <p className="font-bold text-[#000066] text-xl">
+              100M+
+            </p>
+          </div>
 
-</div>
+          {/* Floating Card 2 */}
+          <div className="absolute bottom-2 right-2 bg-white px-5 py-3 rounded-xl shadow-lg">
+            <p className="text-gray-500 text-sm">Data Insights</p>
+            <p className="font-bold text-[#000066] text-xl">
+              Real-Time
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
   );

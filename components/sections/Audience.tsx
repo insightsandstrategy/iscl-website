@@ -2,18 +2,19 @@ import Image from "next/image";
 
 export default function Audience() {
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-14">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HEADER */}
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#000066]">
             Who We Work With
           </h2>
 
-          <p className="mt-4 text-gray-600">
-            We partner with organizations across sectors to deliver data-driven insights
-            that drive meaningful impact.
+          <p className="mt-4 text-gray-600 leading-relaxed">
+            ISCL partners with governments, NGOs, development institutions,
+            donor agencies, and private sector organizations to deliver
+            evidence-based insights and impactful development solutions.
           </p>
         </div>
 
@@ -21,93 +22,113 @@ export default function Audience() {
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {/* NGOs */}
-          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
 
-            <div className="relative h-[180px]">
+            <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
-                alt="NGOs"
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop"
+                alt="NGOs & Development Organizations"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition duration-500"
               />
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold text-[#000066]">
+              <p className="text-xs font-semibold tracking-[0.15em] text-[#FEC619] uppercase">
+                NGOs
+              </p>
+
+              <h3 className="mt-3 font-semibold text-[#000066] text-lg leading-snug">
                 NGOs & Development Organizations
               </h3>
 
-              <p className="mt-3 text-sm text-gray-600">
-                Supporting program design, evaluation, and impact measurement.
+              <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                Supporting programme implementation, monitoring, evaluation,
+                impact assessment, and sustainable development initiatives.
               </p>
             </div>
           </div>
 
           {/* Government */}
-          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
 
-            <div className="relative h-[180px]">
+            <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1555374018-13a8994ab246?q=80&w=800&auto=format&fit=crop"
-                alt="Government"
+                src="https://images.unsplash.com/photo-1555374018-13a8994ab246?q=80&w=1200&auto=format&fit=crop"
+                alt="Government & Public Institutions"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition duration-500"
               />
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold text-[#000066]">
-                Government & Public Sector
+              <p className="text-xs font-semibold tracking-[0.15em] text-[#FEC619] uppercase">
+                Government
+              </p>
+
+              <h3 className="mt-3 font-semibold text-[#000066] text-lg leading-snug">
+                Government & Public Institutions
               </h3>
 
-              <p className="mt-3 text-sm text-gray-600">
-                Providing policy insights, research, and data-driven governance solutions.
+              <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                Delivering policy research, governance insights, polling,
+                surveys, and evidence-based strategic recommendations.
               </p>
             </div>
           </div>
 
           {/* Development Partners */}
-          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
 
-            <div className="relative h-[180px]">
+            <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
                 alt="Development Partners"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition duration-500"
               />
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold text-[#000066]">
+              <p className="text-xs font-semibold tracking-[0.15em] text-[#FEC619] uppercase">
                 Development Partners
+              </p>
+
+              <h3 className="mt-3 font-semibold text-[#000066] text-lg leading-snug">
+                Development Partners & Donor Agencies
               </h3>
 
-              <p className="mt-3 text-sm text-gray-600">
-                Enabling data-backed decision-making for large-scale programs and initiatives.
+              <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                Enabling data-backed programme evaluation, accountability
+                systems, and measurable development outcomes.
               </p>
             </div>
           </div>
 
-          {/* Corporates */}
-          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+          {/* Private Sector */}
+          <div className="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition bg-white">
 
-            <div className="relative h-[180px]">
+            <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop"
-                alt="Corporate"
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop"
+                alt="Private Sector Organizations"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition duration-500"
               />
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold text-[#000066]">
-                Corporate Organizations
+              <p className="text-xs font-semibold tracking-[0.15em] text-[#FEC619] uppercase">
+                Corporate Sector
+              </p>
+
+              <h3 className="mt-3 font-semibold text-[#000066] text-lg leading-snug">
+                Private Sector & Enterprises
               </h3>
 
-              <p className="mt-3 text-sm text-gray-600">
-                Delivering insights to guide strategy, operations, and growth decisions.
+              <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                Supporting organizations with market research, business
+                intelligence, analytics, and strategic consulting solutions.
               </p>
             </div>
           </div>

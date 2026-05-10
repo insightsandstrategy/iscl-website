@@ -1,107 +1,299 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function AboutPage() {
   return (
     <main className="bg-white">
 
       {/* HERO */}
-      <section className="py-20 text-center bg-[#000066] text-white">
-        <h1 className="text-4xl font-bold">About ISCL</h1>
-        <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-          Empowering decisions through data-driven insights and strategic expertise.
-        </p>
+      <section className="relative py-24 overflow-hidden">
+
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+            alt="ISCL Team"
+            fill
+            className="object-cover"
+          />
+
+          <div className="absolute inset-0 bg-[#000066]/85" />
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-6 text-center text-white">
+
+          <p className="uppercase tracking-[0.25em] text-[#FEC619] text-sm font-semibold">
+            About ISCL
+          </p>
+
+          <h1 className="mt-5 text-5xl md:text-6xl font-bold leading-tight">
+            Insights & Strategy Consulting Limited
+          </h1>
+
+          <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+            Empowering Policies, Economy & Development Through Insights
+          </p>
+
+        </div>
       </section>
 
       {/* WHO WE ARE */}
-      <section className="py-16 max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-[#000066]">Who We Are</h2>
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
 
-        <p className="mt-4 text-gray-600 leading-relaxed">
-          Insights & Strategy Consulting Limited (ISCL) is a development consulting
-          firm dedicated to helping organizations make better decisions through
-          research, data, and analytics.
-        </p>
+          {/* LEFT */}
+          <div>
 
-        <p className="mt-4 text-gray-600 leading-relaxed">
-          We work with NGOs, governments, and development partners to design,
-          evaluate, and improve programs that drive measurable impact.
-        </p>
-      </section>
+            <p className="uppercase tracking-[0.2em] text-[#FEC619] text-sm font-semibold">
+              Who We Are
+            </p>
 
-      {/* WHAT WE DO */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#000066] text-center">
-            What We Do
-          </h2>
+            <h2 className="mt-4 text-4xl font-bold text-[#000066] leading-tight">
+              Leading Research, Evaluation & Strategic Consulting Firm
+            </h2>
 
-          <div className="mt-10 grid md:grid-cols-3 gap-8">
-            {[
-              "Research & Evaluation",
-              "Data Collection & Analysis",
-              "Monitoring & Learning Systems",
-              "Policy & Strategy Advisory",
-              "Technology Integration",
-              "Capacity Building",
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-sm">
-                <p className="font-medium text-gray-800">{item}</p>
-              </div>
-            ))}
+            <p className="mt-6 text-gray-700 leading-relaxed">
+              Insights & Strategy Consulting Limited (ISCL) is a leading Polling,
+              Monitoring & Evaluation, Research, Survey, Business Intelligence,
+              Training and Data Analytics Firm legally registered with the
+              Corporate Affairs Commission in Nigeria with RC No. 7483575.
+            </p>
+
+            <p className="mt-5 text-gray-700 leading-relaxed">
+              ISCL is committed to delivering high-quality insights that drive
+              strategic decisions for governments, non-profits, and private
+              organisations.
+            </p>
+
+            <p className="mt-5 text-gray-700 leading-relaxed">
+              Our unique approach combines innovative methodologies, advanced
+              data analytics, sound ethical approaches and actionable insights
+              to ensure that our clients make informed, impactful decisions.
+            </p>
+
+          </div>
+
+          {/* RIGHT */}
+          <div className="relative">
+
+            <div className="bg-[#000066] rounded-3xl p-5 shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978"
+                alt="ISCL Team"
+                width={650}
+                height={500}
+                className="rounded-2xl"
+              />
+            </div>
+
+            {/* Floating stats */}
+            <div className="absolute -top-5 -left-5 bg-white rounded-xl shadow-lg px-5 py-4">
+              <p className="text-gray-500 text-sm">Research Reach</p>
+              <p className="text-[#000066] text-2xl font-bold">100M+</p>
+            </div>
+
+            <div className="absolute -bottom-5 -right-5 bg-[#FEC619] rounded-xl shadow-lg px-5 py-4 text-[#000066]">
+              <p className="text-sm font-medium">Strategic Insights</p>
+              <p className="text-2xl font-bold">Data-Driven</p>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* MISSION / VISION */}
-      <section className="py-16 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-        <div>
-          <h3 className="text-xl font-bold text-[#000066]">Our Mission</h3>
-          <p className="mt-3 text-gray-600">
-            To deliver actionable research and evaluation that drives informed
-            decision-making for sustainable development in Africa.
-          </p>
-        </div>
+      <section className="py-20 bg-gray-50">
 
-        <div>
-          <h3 className="text-xl font-bold text-[#000066]">Our Vision</h3>
-          <p className="mt-3 text-gray-600">
-            To lead in providing transformative insights for strategic decisions
-            across Africa.
-          </p>
+        <div className="max-w-6xl mx-auto px-6">
+
+          <div className="text-center">
+            <p className="uppercase tracking-[0.2em] text-[#FEC619] text-sm font-semibold">
+              Vision & Mission
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold text-[#000066]">
+              What Drives Us
+            </h2>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-2 gap-10">
+
+            {/* Vision */}
+            <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+              <div className="w-16 h-16 rounded-full bg-[#000066] text-white flex items-center justify-center text-2xl font-bold">
+                V
+              </div>
+
+              <h3 className="mt-6 text-3xl font-bold text-[#000066]">
+                Vision
+              </h3>
+
+              <p className="mt-5 text-gray-600 leading-relaxed">
+                To lead in providing transformative insights for strategic
+                decisions across Africa.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="bg-[#000066] rounded-2xl p-10 text-white shadow-xl">
+              <div className="w-16 h-16 rounded-full bg-[#FEC619] text-[#000066] flex items-center justify-center text-2xl font-bold">
+                M
+              </div>
+
+              <h3 className="mt-6 text-3xl font-bold">
+                Mission
+              </h3>
+
+              <p className="mt-5 text-gray-300 leading-relaxed">
+                To deliver actionable research & evaluation that drives informed
+                decision-making for sustainable development in Africa.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* VALUES */}
-      <section className="py-16 bg-gray-50 text-center">
-        <h2 className="text-3xl font-bold text-[#000066]">Our Core Values</h2>
+      {/* CORE VALUES */}
+      <section className="py-20">
 
-        <div className="mt-10 grid md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6">
-          {["Integrity", "Excellence", "Innovation", "Sustainability"].map(
-            (val, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-sm">
-                <p className="font-semibold text-[#000066]">{val}</p>
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="text-center">
+            <p className="uppercase tracking-[0.2em] text-[#FEC619] text-sm font-semibold">
+              Core Values
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold text-[#000066]">
+              Our Core Values
+            </h2>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            {[
+              {
+                title: "Integrity",
+                desc: "We maintain the highest standards of honesty and transparency in all our engagements.",
+              },
+              {
+                title: "Excellence",
+                desc: "We strive to deliver world-class solutions and insights for every project we manage.",
+              },
+              {
+                title: "Innovation",
+                desc: "We leverage cutting-edge technologies and methodologies to provide forward-thinking solutions.",
+              },
+              {
+                title: "Sustainability",
+                desc: "We are committed to promoting sustainable practices in our research and consulting services.",
+              },
+            ].map((value, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition"
+              >
+
+                <div className="w-14 h-14 rounded-full bg-[#000066] text-white flex items-center justify-center font-bold text-xl">
+                  {i + 1}
+                </div>
+
+                <h3 className="mt-6 text-2xl font-bold text-[#000066]">
+                  {value.title}
+                </h3>
+
+                <p className="mt-4 text-gray-600 leading-relaxed text-sm">
+                  {value.desc}
+                </p>
+
               </div>
-            )
-          )}
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* WHY ISCL */}
+      <section className="py-20 bg-[#000066] text-white">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="text-center">
+            <p className="uppercase tracking-[0.2em] text-[#FEC619] text-sm font-semibold">
+              Why ISCL
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold">
+              Why Partner With Us
+            </h2>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {[
+              "Strong & Rigorous Methodologies",
+              "Over 100million active Nigerian phone numbers in our Database",
+              "Strong Quality Control Checks & Measures",
+              "Electronic & Tech Aided Data Collection (CAPI, CATI, CAWI)",
+              "Strict Adherence to Ethical Practices",
+              "Accredited by NCMD & Approved training partner with PM4NGOs",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white/10 border border-white/10 rounded-2xl p-8"
+              >
+
+                <div className="w-12 h-12 rounded-full bg-[#FEC619] text-[#000066] flex items-center justify-center font-bold">
+                  {i + 1}
+                </div>
+
+                <p className="mt-6 text-lg leading-relaxed font-medium">
+                  {item}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#000066] text-white text-center">
-        <h2 className="text-3xl font-bold">
-          Partner With Us
-        </h2>
+      <section className="py-20 text-center bg-white">
 
-        <p className="mt-3 text-gray-300">
-          Let’s work together to drive meaningful impact through data.
-        </p>
+        <div className="max-w-4xl mx-auto px-6">
 
-        <div className="mt-6 flex justify-center gap-4">
-          <button className="bg-[#FEC619] text-[#000066] px-6 py-3 rounded-md font-semibold">
-            Start a Project
-          </button>
+          <p className="uppercase tracking-[0.2em] text-[#FEC619] text-sm font-semibold">
+            Let’s Work Together
+          </p>
 
-          <button className="border border-white px-6 py-3 rounded-md">
-            Contact Us
-          </button>
+          <h2 className="mt-4 text-4xl font-bold text-[#000066] leading-tight">
+            Empowering Policies, Economy & Development Through Insights
+          </h2>
+
+          <p className="mt-6 text-gray-600 leading-relaxed">
+            ISCL combines innovative methodologies, advanced data analytics,
+            sound ethical approaches and actionable insights to ensure clients
+            make informed and impactful decisions.
+          </p>
+
+          <div className="mt-8 flex justify-center flex-wrap gap-4">
+
+            <Link
+              href="/start-project"
+              className="bg-[#FEC619] text-[#000066] px-6 py-3 rounded-md font-semibold hover:opacity-90 transition"
+            >
+              Start a Project
+            </Link>
+
+            <Link
+              href="/contact"
+              className="border border-[#000066] text-[#000066] px-6 py-3 rounded-md hover:bg-[#000066] hover:text-white transition"
+            >
+              Contact Us
+            </Link>
+
+          </div>
         </div>
       </section>
 

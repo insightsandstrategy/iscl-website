@@ -7,10 +7,14 @@ import Trust from "@/components/sections/Trust";
 import CTA from "@/components/sections/CTA";
 import Audience from "@/components/sections/Audience";
 import Resources from "@/components/sections/Resources";
+import Partners from "@/components/sections/Partners";
+import Footer from "@/components/layout/Footer";
+import PromoPopup from "@/components/ui/PromoPopup";
 
 export default function Home() {
   return (
     <>
+    <PromoPopup />
       <Hero />
       <Services />
       <Audience />  
@@ -18,8 +22,10 @@ export default function Home() {
       <Process />
       <WhyISCL />
       <Projects />
+      <Partners />
       <Trust />
       <CTA />
+      <Footer />
     </>
   );
 }

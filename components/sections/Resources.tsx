@@ -1,79 +1,103 @@
-import Image from "next/image";
-
-const resources = [
-  {
-    type: "GUIDE",
-    title: "Monitoring & Evaluation Framework Guide",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    type: "TEMPLATE",
-    title: "Baseline Survey Questionnaire Template",
-    image:
-      "https://images.unsplash.com/photo-1581091870627-3b5de59a89c1?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    type: "TOOL",
-    title: "Data Quality Assessment Checklist",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    type: "GUIDE",
-    title: "Using Data for Policy & Decision Making",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=800&auto=format&fit=crop",
-  },
-];
-
 export default function Resources() {
-  return (
-    <section className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+  const rows = [
+    {
+      function: "Data Collection",
+      tools: ["SurveyCTO", "SurveyToGo", "Kobo Toolbox"],
+    },
+    {
+      function: "Quantitative Analysis",
+      tools: ["SPSS", "STATA", "R & Python"],
+    },
+    {
+      function: "Qualitative Analysis",
+      tools: ["Nvivo", "MaxDQA", "Dedoose"],
+    },
+    {
+      function: "Data Visualisation",
+      tools: ["Tableau", "Power BI", "Excel & Think-cell"],
+    },
+    {
+      function: "Outputs",
+      tools: [
+        "Interactive Reports",
+        "Dashboards AhaSlides, SketchWow",
+        "Videos & Images",
+      ],
+    },
+  ];
 
-        {/* HEADER */}
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-semibold text-[#000066]">
-            Insights, Resources & Tools
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Heading */}
+        <div className="max-w-3xl">
+
+          <p className="text-[#000066] text-sm font-semibold tracking-[0.3em] uppercase">
+            Our
+          </p>
+
+          <h2 className="mt-2 text-4xl md:text-5xl font-black text-[#0B3AA4] leading-none">
+            TECHNOLOGY <br /> & TOOLS
           </h2>
 
-          <button className="border border-gray-300 px-4 py-2 rounded-md text-sm hover:bg-gray-100">
-            View All
-          </button>
+          <div className="w-24 h-1 bg-[#FEC619] mt-4 rounded-full"></div>
+
+          <p className="mt-6 text-gray-700 text-lg leading-relaxed">
+            We utilise cutting-edge technology to ensure data accuracy,
+            privacy, and real-time insights. Some of the tools we employ
+            are presented below.
+          </p>
+
         </div>
 
-        {/* GRID */}
-        <div className="mt-10 grid md:grid-cols-4 gap-6">
+        {/* Table */}
+        <div className="mt-12 overflow-hidden rounded-xl shadow-lg">
 
-          {resources.map((item, index) => (
+          {/* Header */}
+          <div className="grid grid-cols-4">
+
+            <div className="bg-[#0B3AA4] text-white p-6 text-xl font-semibold border border-white">
+              Functions
+            </div>
+
+            <div className="bg-[#3D63B8] text-white p-6 text-xl font-semibold border border-white col-span-3 text-center">
+              Technology & Tools
+            </div>
+
+          </div>
+
+          {/* Rows */}
+          {rows.map((row, index) => (
             <div
               key={index}
-              className="group cursor-pointer"
+              className="grid grid-cols-4"
             >
-              {/* IMAGE */}
-              <div className="relative h-[140px] rounded-lg overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition"
-                />
+
+              {/* Function */}
+              <div className="bg-[#0B3AA4] text-white p-6 text-2xl leading-snug font-medium border border-white">
+                {row.function}
               </div>
 
-              {/* TYPE */}
-              <span className="inline-block mt-4 text-xs font-medium px-2 py-1 bg-gray-100 rounded">
-                {item.type}
-              </span>
+              {/* Tools */}
+              {row.tools.map((tool, toolIndex) => (
+                <div
+                  key={toolIndex}
+                  className={`p-6 text-white text-2xl leading-snug border border-white ${
+                    toolIndex % 2 === 0
+                      ? "bg-[#3D63B8]"
+                      : "bg-[#0B3AA4]"
+                  }`}
+                >
+                  {tool}
+                </div>
+              ))}
 
-              {/* TITLE */}
-              <h3 className="mt-3 text-sm font-semibold text-gray-800 group-hover:text-[#000066]">
-                {item.title}
-              </h3>
             </div>
           ))}
 
         </div>
+
       </div>
     </section>
   );
