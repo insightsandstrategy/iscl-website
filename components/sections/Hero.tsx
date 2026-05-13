@@ -30,9 +30,7 @@ export default function Hero() {
         {/* LEFT */}
         <div>
 
-          <p className="uppercase tracking-[0.25em] text-[#FEC619] text-sm font-semibold">
-            Insights & Strategy Consulting Limited
-          </p>
+         
 
           <h1 className="mt-5 text-4xl md:text-6xl font-bold text-white leading-tight">
             Empowering Policies, Economy & Development Through Insights
@@ -71,10 +69,10 @@ export default function Hero() {
           <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-4 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
 
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-              alt="Analytics Dashboard"
-              width={500}
-              height={320}
+             src="/popup-image.png"
+                alt="ISCL"
+                width={420}
+                height={420}
               className="rounded-2xl"
             />
           </div>

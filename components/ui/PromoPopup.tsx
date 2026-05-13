@@ -85,7 +85,7 @@ export default function PromoPopup() {
               <div className="absolute w-[320px] h-[320px] bg-[#FEC619]/20 rounded-full blur-3xl"></div>
 
               <Image
-                src="/popup-image.png"
+                src="/popup.png"
                 alt="ISCL"
                 width={420}
                 height={420}
