@@ -139,7 +139,7 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-[#000066]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition duration-300 z-0"></div>
 
                   {"images" in service ? (
-                    <div className="relative h-[420px] w-full overflow-hidden rounded-3xl">
+                    <div className="relative h- w-full overflow-hidden rounded-3xl">
                       <div
                         className="flex w-max h-full"
                         style={{
@@ -153,9 +153,9 @@ export default function ServicesPage() {
                               key={idx}
                               src={img}
                               alt={`${service.title}-${idx}`}
-                              width={700}
+                              width={500}
                               height={500}
-                              className="h-[420px] w-[700px] object-cover shrink-0"
+                              className="h-[420px] w-[420px] object-contain shrink-0 bg-white"
                             />
                           ))}
                       </div>

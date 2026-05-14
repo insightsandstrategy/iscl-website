@@ -135,7 +135,7 @@ export default function Navbar() {
         }`}
       >
 
-        <div className="px-6 py-6 flex flex-col gap-5 text-white text-base">
+        <div className="px-6 py-6 flex flex-col gap-6 text-white text-xl font-medium">
 
           <Link
             href="/"
