@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          src="/team.jpg"
           alt="ISCL Team"
           fill
           priority

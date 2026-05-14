@@ -8,8 +8,8 @@ export default function Projects() {
 
         {/* Header */}
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#000066]">
-            Selected Projects
+          <h2 className="mt-4 text-4xl md:text-5xl font-black text-[#000066] leading-tight">
+            Projects
           </h2>
           <p className="mt-4 text-gray-600">
             From complexity to clarity — we deliver actionable insights across sectors and programs.

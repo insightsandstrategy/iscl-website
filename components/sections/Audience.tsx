@@ -26,7 +26,7 @@ export default function Audience() {
 
             <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop"
+                src="/ngo.png"
                 alt="NGOs & Development Organizations"
                 fill
                 className="object-cover group-hover:scale-105 transition duration-500"
@@ -54,7 +54,7 @@ export default function Audience() {
 
             <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1555374018-13a8994ab246?q=80&w=1200&auto=format&fit=crop"
+                src="/government.png"
                 alt="Government & Public Institutions"
                 fill
                 className="object-cover group-hover:scale-105 transition duration-500"
@@ -82,7 +82,7 @@ export default function Audience() {
 
             <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                src="/development.png"
                 alt="Development Partners"
                 fill
                 className="object-cover group-hover:scale-105 transition duration-500"
@@ -110,7 +110,7 @@ export default function Audience() {
 
             <div className="relative h-[190px]">
               <Image
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop"
+                src="/private.png"
                 alt="Private Sector Organizations"
                 fill
                 className="object-cover group-hover:scale-105 transition duration-500"

@@ -11,7 +11,7 @@ export default function AboutPage() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+            src="/team.jpg"
             alt="ISCL Team"
             fill
             className="object-cover"
@@ -78,7 +78,7 @@ export default function AboutPage() {
 
             <div className="bg-[#000066] rounded-3xl p-5 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978"
+                src="/insight.jpg"
                 alt="ISCL Team"
                 width={650}
                 height={500}

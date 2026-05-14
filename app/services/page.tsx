@@ -24,7 +24,7 @@ export default function ServicesPage() {
         "Political Economy Analysis (PEA)",
         "Data Science & Insights",
       ],
-      img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+      img: "/data.jpg",
     },
 
     {
@@ -36,7 +36,7 @@ export default function ServicesPage() {
         "RCTs",
         "Third-Party Monitoring",
       ],
-      img: "https://images.unsplash.com/photo-1552664730-d307ca884978",
+      img: "/monitor.jpg",
     },
 
     {
@@ -72,7 +72,7 @@ export default function ServicesPage() {
         "Leadership Development",
         "Startup Incubation",
       ],
-      img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+      img: "/entrepreneur.jpg",
     },
   ];
 
