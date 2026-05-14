@@ -3,7 +3,7 @@ import ProjectCard from "../ui/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="py-10 bg-white">
+    <section id= "projects" className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}

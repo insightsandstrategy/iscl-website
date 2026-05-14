@@ -73,6 +73,8 @@ export default function AboutPage() {
 
           </div>
 
+
+
           {/* RIGHT */}
           <div className="relative">
 
@@ -100,6 +102,17 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+<div className="flex justify-center mt-12">
+
+  <Link
+    href="/about/team"
+    className="w-full max-w-xl inline-flex items-center justify-center bg-[#000066] text-white px-8 py-5 rounded-full font-semibold text-lg hover:bg-[#0B3AA4] transition duration-300 shadow-lg hover:shadow-2xl"
+  >
+    Meet Our Team
+  </Link>
+
+</div>
 
       {/* MISSION / VISION */}
       <section className="py-20 bg-gray-50">
