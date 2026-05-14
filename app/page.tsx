@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
@@ -12,12 +16,27 @@ import Footer from "@/components/layout/Footer";
 import PromoPopup from "@/components/ui/PromoPopup";
 
 export default function Home() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-    <PromoPopup />
+      {/* POPUP */}
+      <PromoPopup
+        isOpen={showPopup}
+        onClose={() => setShowPopup(false)}
+      />
+
       <Hero />
       <Services />
-      <Audience />  
+      <Audience />
       <Resources />
       <Process />
       <WhyISCL />
