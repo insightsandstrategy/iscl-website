@@ -39,7 +39,7 @@ export default function Hero() {
         <div>
 
           <h1 className="mt-5 text-4xl md:text-6xl font-bold text-white leading-tight">
-            Empowering Policies, Economy & Development Through Insights
+            Empowering Policies, Organisations & People with Insights
           </h1>
 
           <p className="mt-6 text-gray-300 max-w-xl leading-relaxed text-lg">

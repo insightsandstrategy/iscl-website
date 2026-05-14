@@ -31,7 +31,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
-            Empowering Policies, Organizations & People with Insights
+            Empowering Policies, Organisations & People with Insights
           </p>
 
         </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
             {/* Floating stats */}
             <div className="absolute -top-5 -left-5 bg-white rounded-xl shadow-lg px-5 py-4">
               <p className="text-gray-500 text-sm">Research Reach</p>
-              <p className="text-[#000066] text-2xl font-bold">100M+</p>
+              <p className="text-[#000066] text-2xl font-bold">10M+</p>
             </div>
 
             <div className="absolute -bottom-5 -right-5 bg-[#FEC619] rounded-xl shadow-lg px-5 py-4 text-[#000066]">
