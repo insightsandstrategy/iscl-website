@@ -28,7 +28,7 @@ export default function Footer() {
               Call us:
               <br />
               <span className="text-[#0B3AA4]">
-                +(234) 09023035548
+                +(234) 902-303-5548
               </span>
             </h2>
 
