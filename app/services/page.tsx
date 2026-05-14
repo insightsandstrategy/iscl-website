@@ -146,8 +146,8 @@ export default function ServicesPage() {
                           animation: "slide 18s linear infinite",
                         }}
                       >
-                        {service.images
-                          .concat(service.images)
+                        {service.images!
+                          .concat(service.images!)
                           .map((img, idx) => (
                             <Image
                               key={idx}
