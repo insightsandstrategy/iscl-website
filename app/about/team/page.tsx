@@ -3,15 +3,21 @@ import Link from "next/link";
 
 const teamMembers = [
   {
+    name: "Victoria Ikani",
+    role: "Chief financial & Operating Officer",
+    image: "/victoriaceo.jpg",
+  },
+    {
     name: "Samuel Ikani",
-    role: "Managing Director/CEO",
+    role: "Managing Partner",
     image: "/samuel.jpg",
   },
   {
-    name: "Victoria Ikani",
-    role: "Chief Operating Officer",
-    image: "/victoria.jpg",
-  },
+  name: "Favour Alor",
+  role: "Faculty Lead",
+  department: "Training & Capacity Building",
+  image: "/alor.jpg",
+},
   {
     name: "Elizabeth Apah",
     role: "Finance Manager",
@@ -22,16 +28,59 @@ const teamMembers = [
     role: "Media Manager",
     image: "/ca.jpg",
   },
-  {
-    name: "Research Associate",
-    role: "Research & Data Analyst",
-    image: "/team/research-associate.jpg",
-  },
-  {
-    name: "Field Coordinator",
-    role: "Monitoring & Evaluation Officer",
-    image: "/team/field-coordinator.jpg",
-  },
+{
+  name: "Timothy Amana",
+  role: "Data Management Officer",
+  image: "/amana.jpg",
+},
+
+{
+  name: "Stephanie Simon",
+  role: "Communication Officer",
+  image: "/simon.jpg",
+},
+
+{
+  name: "Dr. Aderonke Folagbade",
+  role: "Volunteer Advisor",
+  image: "/aderonke.jpg",
+},
+
+{
+  name: "Michael Oyinlola",
+  role: "Volunteer Advisor",
+  image: "/michael.jpg",
+},
+
+{
+  name: "Victoria",
+  role: "Program Officer - NGO",
+  image: "/victoriango.jpg",
+},
+
+{
+  name: "Isah Babale",
+  role: "Volunteer Advisor",
+  image: "/isah.jpg",
+},
+
+{
+  name: "Humphrey Anyichie",
+  role: "Intern",
+  image: "/humphrey.jpg",
+},
+
+{
+  name: "Samson Antony",
+  role: "Intern",
+  image: "/antony.jpg",
+},
+
+{
+  name: "Sarah Kwewum",
+  role: "Intern",
+  image: "/sarah.jpg",
+},
 ];
 
 export default function TeamPage() {

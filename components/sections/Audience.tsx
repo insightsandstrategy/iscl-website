@@ -27,7 +27,7 @@ export default function Audience() {
             <div className="relative h-[190px]">
               <Image
                 src="/ngo.png"
-                alt="NGOs & Development Organizations"
+                alt="NGOs & Development Partners"
                 fill
                 className="object-cover group-hover:scale-105 transition duration-500"
               />
@@ -91,11 +91,11 @@ export default function Audience() {
 
             <div className="p-6">
               <p className="text-xs font-semibold tracking-[0.15em] text-[#FEC619] uppercase">
-                Development Partners
+                Academia
               </p>
 
               <h3 className="mt-3 font-semibold text-[#000066] text-lg leading-snug">
-                Development Partners & Donor Agencies
+                Academia and Research institue 
               </h3>
 
               <p className="mt-3 text-sm text-gray-600 leading-relaxed">

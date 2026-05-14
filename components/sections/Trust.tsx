@@ -53,13 +53,13 @@ export default function Trust() {
           <div className="bg-[#FEC619] rounded-3xl p-10 text-center hover:-translate-y-2 transition duration-300 shadow-2xl">
 
             <h3 className="text-5xl font-black text-[#000066]">
-              7
+              8
             </h3>
 
             <p className="mt-4 text-[#000066] text-xl font-bold">
-              Evaluations
+              Evaluations Conducted
               <br />
-              (Baseline & Endline)
+              (Baseline, Endline & outcome harvesting)
             </p>
 
           </div>
@@ -83,13 +83,12 @@ export default function Trust() {
           <div className="bg-[#0B3AA4] rounded-3xl p-10 text-center hover:-translate-y-2 transition duration-300 shadow-2xl border border-white/10">
 
             <h3 className="text-5xl font-black text-[#FEC619]">
-              100M+
+              12+
             </h3>
 
             <p className="mt-4 text-white text-xl font-semibold">
-              Verified Phone
-              <br />
-              Contacts
+              NGOs Serverd
+              
             </p>
 
           </div>

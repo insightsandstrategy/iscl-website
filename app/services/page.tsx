@@ -1,6 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const slideStyle = `
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+`;
+
 export default function ServicesPage() {
   const services = [
     {
@@ -12,7 +24,12 @@ export default function ServicesPage() {
         "Election Monitoring",
         "Market Research",
       ],
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      images: [
+        "/polling1.jpg",
+        "/polling2.jpg",
+        "/polling3.jpg",
+        "/polling4.jpg",
+      ],
     },
 
     {
@@ -48,7 +65,7 @@ export default function ServicesPage() {
         "Artificial Intelligence Training",
         "Custom Capacity Building",
       ],
-      img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+      img: "/capacity.jpg",
     },
 
     {
@@ -78,16 +95,15 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-white overflow-hidden">
+      <style dangerouslySetInnerHTML={{ __html: slideStyle }} />
 
       {/* HERO */}
       <section className="relative py-28 bg-[#000066] text-white overflow-hidden">
-
         {/* Background Effects */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#FEC619]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-5xl mx-auto px-6 text-center">
-
           <p className="uppercase tracking-[0.35em] text-[#FEC619] text-sm font-semibold">
             Our Expertise
           </p>
@@ -104,18 +120,13 @@ export default function ServicesPage() {
             consulting services designed to empower policies,
             economies, and development through evidence-based insights.
           </p>
-
         </div>
-
       </section>
 
       {/* SERVICES */}
       <section className="py-24 bg-[#F8F9FC]">
-
         <div className="max-w-7xl mx-auto px-6">
-
           <div className="grid gap-16">
-
             {services.map((service, index) => (
               <div
                 key={index}
@@ -123,25 +134,45 @@ export default function ServicesPage() {
                   index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >
-
                 {/* IMAGE */}
-                <div className="relative group">
+                <div className="relative group overflow-hidden rounded-3xl">
+                  <div className="absolute inset-0 bg-[#000066]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition duration-300 z-0"></div>
 
-                  <div className="absolute inset-0 bg-[#000066]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition duration-300"></div>
-
-                  <Image
-                    src={service.img}
-                    alt={service.title}
-                    width={700}
-                    height={500}
-                    className="relative rounded-3xl shadow-2xl object-cover h-[420px] w-full"
-                  />
-
+                  {"images" in service ? (
+                    <div className="relative h-[420px] w-full overflow-hidden rounded-3xl">
+                      <div
+                        className="flex w-max h-full"
+                        style={{
+                          animation: "slide 18s linear infinite",
+                        }}
+                      >
+                        {service.images
+                          .concat(service.images)
+                          .map((img, idx) => (
+                            <Image
+                              key={idx}
+                              src={img}
+                              alt={`${service.title}-${idx}`}
+                              width={700}
+                              height={500}
+                              className="h-[420px] w-[700px] object-cover shrink-0"
+                            />
+                          ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Image
+                      src={service.img}
+                      alt={service.title}
+                      width={700}
+                      height={500}
+                      className="relative rounded-3xl shadow-2xl object-cover h-[420px] w-full"
+                    />
+                  )}
                 </div>
 
                 {/* CONTENT */}
                 <div>
-
                   <p className="uppercase tracking-[0.25em] text-[#000066] text-sm font-semibold">
                     Service {index + 1}
                   </p>
@@ -157,13 +188,11 @@ export default function ServicesPage() {
                   </p>
 
                   <div className="mt-8 grid sm:grid-cols-2 gap-4">
-
                     {service.points.map((point, idx) => (
                       <div
                         key={idx}
                         className="flex items-start gap-3 bg-white rounded-2xl p-4 shadow-sm border border-gray-100"
                       >
-
                         <div className="w-7 h-7 rounded-full bg-[#000066] text-white flex items-center justify-center text-sm font-bold shrink-0">
                           ✓
                         </div>
@@ -171,14 +200,11 @@ export default function ServicesPage() {
                         <p className="text-gray-700 font-medium leading-relaxed">
                           {point}
                         </p>
-
                       </div>
                     ))}
-
                   </div>
 
                   <div className="mt-10 flex flex-wrap gap-4">
-
                     <Link
                       href="/contact"
                       className="bg-[#000066] text-white px-7 py-4 rounded-full font-semibold hover:bg-[#0B3AA4] transition shadow-lg"
@@ -192,27 +218,18 @@ export default function ServicesPage() {
                     >
                       Training Calendar
                     </Link>
-
                   </div>
-
                 </div>
-
               </div>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
       {/* OUR APPROACH */}
       <section className="py-24 bg-[#000066] text-white">
-
         <div className="max-w-7xl mx-auto px-6">
-
           <div className="text-center max-w-3xl mx-auto">
-
             <p className="uppercase tracking-[0.35em] text-[#FEC619] text-sm font-semibold">
               Our Approach
             </p>
@@ -222,11 +239,9 @@ export default function ServicesPage() {
               <br />
               Insight to Impact
             </h2>
-
           </div>
 
           <div className="mt-20 grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-
             {[
               {
                 title: "Diagnose",
@@ -253,7 +268,6 @@ export default function ServicesPage() {
                 key={i}
                 className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:-translate-y-2 transition duration-300"
               >
-
                 <div className="w-16 h-16 rounded-full bg-[#FEC619] text-[#000066] flex items-center justify-center text-2xl font-black">
                   {`0${i + 1}`}
                 </div>
@@ -265,24 +279,18 @@ export default function ServicesPage() {
                 <p className="mt-4 text-white/70 leading-relaxed">
                   {step.desc}
                 </p>
-
               </div>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
       {/* CTA */}
       <section className="relative py-24 overflow-hidden bg-[#F8F9FC]">
-
         <div className="absolute top-0 left-0 w-80 h-80 bg-[#FEC619]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#000066]/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-5xl mx-auto px-6 text-center">
-
           <p className="uppercase tracking-[0.35em] text-[#000066] text-sm font-semibold">
             Let’s Build The Future Together
           </p>
@@ -300,7 +308,6 @@ export default function ServicesPage() {
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-6">
-
             <Link
               href="/contact"
               className="bg-[#000066] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0B3AA4] transition shadow-xl"
@@ -314,13 +321,9 @@ export default function ServicesPage() {
             >
               Training Calendar
             </Link>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

@@ -31,7 +31,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
-            Empowering Policies, Economy & Development Through Insights
+            Empowering Policies, Organizations & People with Insights
           </p>
 
         </div>

@@ -22,6 +22,10 @@ const partners = [
     logo: "/partners/cerphc.png",
   },
   {
+    name: "TETRA TECH",
+    logo: "/tt.png",
+  },
+  {
     name: "NITDA",
     logo: "/partners/nitda.png"
   },
