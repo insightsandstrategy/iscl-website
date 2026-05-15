@@ -16,7 +16,7 @@ const slideStyle = `
 export default function ServicesPage() {
   const services = [
     {
-      title: "Polling & Survey Services",
+      title: "Polling & Survey",
       desc: "Public Opinion Polling, Electability Surveys, Election Monitoring, and Market Research services powered by rigorous methodologies and extensive database reach.",
       points: [
         "Public Opinion Polling",
@@ -77,7 +77,7 @@ export default function ServicesPage() {
         "Policy Development",
         "Grant Writing",
       ],
-      img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+      img: "/mt.jpg",
     },
 
     {
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                 {/* CONTENT */}
                 <div>
                   <p className="uppercase tracking-[0.25em] text-[#000066] text-sm font-semibold">
-                    Service {index + 1}
+                    
                   </p>
 
                   <h2 className="mt-4 text-4xl font-black text-[#000066] leading-tight">

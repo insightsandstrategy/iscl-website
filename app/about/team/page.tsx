@@ -23,9 +23,9 @@ const teamMembers = [
   linkedin: "https://www.linkedin.com/in/favouralor",
 },
   {
-    name: "Elizabeth Apah",
+    name: "Ruth Samuel",
     role: "Finance Manager",
-    image: "/apeh.jpg",
+    image: "/ruth.jpg",
     linkedin: "https://www.linkedin.com/in/elizabeth-apah-0378961ba",
   },
   {
@@ -52,6 +52,7 @@ const teamMembers = [
   name: "Dr. Aderonke Folagbade",
   role: "Volunteer Advisor",
   image: "/ade.jpg",
+  linkedin: "https://www.linkedin.com/in/aderonke-folagbade-5538a43b",
 },
 
 {
@@ -62,14 +63,14 @@ const teamMembers = [
 },
 
 {
-  name: "Victoria",
+  name: "Victoria Ngoka",
   role: "Program Officer - NGO",
   image: "/victoriango.jpg",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/victoria-ngoka-ba2613280",
 },
 
 {
-  name: "Isah Babale",
+  name: "Isa Babale",
   role: "Volunteer Advisor",
   image: "/isah.jpg",
   linkedin: "",
