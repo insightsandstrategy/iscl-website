@@ -4,40 +4,48 @@ import Link from "next/link";
 const teamMembers = [
   {
     name: "Victoria Ikani",
-    role: "Chief financial & Operating Officer",
+    role: "Chief Finance & Operating Officer",
     image: "/victoriaceo.jpg",
+    linkedin: "https://www.linkedin.com/in/victoria-ikani-73b54262",
+
   },
     {
     name: "Samuel Ikani",
     role: "Managing Partner/CEO",
     image: "/samuel.jpg",
+    linkedin: "https://www.linkedin.com/in/samuel-ikani-b015bb41",
   },
   {
   name: "Favour Alor",
   role: "Faculty Lead:Training & Capacity Building",
   department: "Training & Capacity Building",
   image: "/alor.jpg",
+  linkedin: "https://www.linkedin.com/in/favouralor",
 },
   {
     name: "Elizabeth Apah",
     role: "Finance Manager",
     image: "/apeh.jpg",
+    linkedin: "https://www.linkedin.com/in/elizabeth-apah-0378961ba",
   },
   {
     name: "Collins Ademola",
     role: "Media Manager",
     image: "/ca.jpg",
+    linkedin: "https://www.linkedin.com/in/ademola-collins",
   },
 {
   name: "Timothy Amana",
   role: "Data Management Officer",
   image: "/amana.jpg",
+  linkedin: "https://www.linkedin.com/in/timothy-amana-8492421a1",
 },
 
 {
   name: "Stephanie Simon",
   role: "Communication Officer",
   image: "/simon.jpg",
+  linkedin: "https://www.linkedin.com/in/stephanie-simon-4b58a2171",
 },
 
 {
@@ -50,36 +58,42 @@ const teamMembers = [
   name: "Michael Oyinlola",
   role: "Volunteer Advisor",
   image: "/michael.jpg",
+  linkedin: "https://www.linkedin.com/in/michaeloyinlolamonitoringandevaluationspecialist",
 },
 
 {
   name: "Victoria",
   role: "Program Officer - NGO",
   image: "/victoriango.jpg",
+  linkedin: "",
 },
 
 {
   name: "Isah Babale",
   role: "Volunteer Advisor",
   image: "/isah.jpg",
+  linkedin: "",
 },
 
 {
   name: "Humphrey Anyichie",
   role: "Intern",
   image: "/humphrey.jpg",
+  linkedin: "https://www.linkedin.com/in/humphrey-anyichie-583853403",
 },
 
 {
   name: "Samson Antony",
   role: "Intern",
   image: "/antony.jpg",
+  linkedin: "",
 },
 
 {
   name: "Sarah Kwewum",
   role: "Intern",
   image: "/sarah.jpg",
+  linkedin: "https://www.linkedin.com/in/sarah-kwewum-743793199",
 },
 ];
 
@@ -216,26 +230,16 @@ export default function TeamPage() {
                   {/* Social Icons */}
                   <div className="mt-8 flex justify-center gap-4">
 
-                    <a
-                      href="#"
-                      className="w-11 h-11 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-[#FEC619] hover:text-[#000066] transition"
-                    >
-                      in
-                    </a>
+                 <a
+  href={member.linkedin}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white hover:bg-[#FEC619] hover:text-[#000066] transition"
+>
+  in
+</a>
 
-                    <a
-                      href="#"
-                      className="w-11 h-11 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-[#FEC619] hover:text-[#000066] transition"
-                    >
-                      f
-                    </a>
-
-                    <a
-                      href="#"
-                      className="w-11 h-11 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-[#FEC619] hover:text-[#000066] transition"
-                    >
-                      ig
-                    </a>
+                   
 
                   </div>
 
