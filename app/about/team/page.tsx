@@ -72,7 +72,7 @@ const teamMembers = [
 {
   name: "Isa Babale",
   role: "Volunteer Advisor",
-  image: "/isah.jpg",
+  image: "/isa.jpg",
   linkedin: "",
 },
 
