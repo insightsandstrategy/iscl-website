@@ -281,7 +281,7 @@ export default function AboutPage() {
           </p>
 
           <h2 className="mt-4 text-4xl font-bold text-[#000066] leading-tight">
-            Empowering Policies, Economy & Development Through Insights
+            Empowering Policies, Organisations & People with Insights
           </h2>
 
           <p className="mt-6 text-gray-600 leading-relaxed">

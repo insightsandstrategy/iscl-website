@@ -93,6 +93,10 @@ export default function Hero() {
                 "/slideh1.jpg",
                 "/slideh2.jpg",
                 "/slideh9.jpg",
+                "/slide10.jpg",
+                "/pm.jpg",
+                "/slide11.jpg",
+                "/slide15.jpg",
                 "/slideh3.jpg",
                 "/capacity.jpg",
               ].map((slide, index) => (

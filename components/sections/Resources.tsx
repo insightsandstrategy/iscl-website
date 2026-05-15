@@ -52,53 +52,56 @@ export default function Resources() {
         </div>
 
         {/* Table */}
-        <div className="mt-12 overflow-hidden rounded-xl shadow-lg">
+<div className="mt-12 overflow-x-auto">
 
-          {/* Header */}
-          <div className="grid grid-cols-4">
+  <div className="min-w-[900px] overflow-hidden rounded-xl shadow-lg">
 
-            <div className="bg-[#0B3AA4] text-white p-6 text-xl font-semibold border border-white">
-              Functions
-            </div>
+    {/* Header */}
+    <div className="grid grid-cols-4">
 
-            <div className="bg-[#3D63B8] text-white p-6 text-xl font-semibold border border-white col-span-3 text-center">
-              Technology & Tools
-            </div>
+      <div className="bg-[#0B3AA4] text-white p-6 text-xl font-semibold border border-white whitespace-normal break-words">
+        Functions
+      </div>
 
-          </div>
+      <div className="bg-[#3D63B8] text-white p-6 text-xl font-semibold border border-white col-span-3 text-center whitespace-normal break-words">
+        Technology & Tools
+      </div>
 
-          {/* Rows */}
-          {rows.map((row, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-4"
-            >
+    </div>
 
-              {/* Function */}
-              <div className="bg-[#0B3AA4] text-white p-6 text-2xl leading-snug font-medium border border-white">
-                {row.function}
-              </div>
+    {/* Rows */}
+    {rows.map((row, index) => (
+      <div
+        key={index}
+        className="grid grid-cols-4"
+      >
 
-              {/* Tools */}
-              {row.tools.map((tool, toolIndex) => (
-                <div
-                  key={toolIndex}
-                  className={`p-6 text-white text-2xl leading-snug border border-white ${
-                    toolIndex % 2 === 0
-                      ? "bg-[#3D63B8]"
-                      : "bg-[#0B3AA4]"
-                  }`}
-                >
-                  {tool}
-                </div>
-              ))}
-
-            </div>
-          ))}
-
+        {/* Function */}
+        <div className="bg-[#0B3AA4] text-white p-6 text-2xl leading-snug font-medium border border-white whitespace-normal break-words">
+          {row.function}
         </div>
 
+        {/* Tools */}
+        {row.tools.map((tool, toolIndex) => (
+          <div
+            key={toolIndex}
+            className={`p-6 text-white text-2xl leading-snug border border-white whitespace-normal break-words ${
+              toolIndex % 2 === 0
+                ? "bg-[#3D63B8]"
+                : "bg-[#0B3AA4]"
+            }`}
+          >
+            {tool}
+          </div>
+        ))}
+
       </div>
+    ))}
+
+  </div>
+
+</div>
+</div>
     </section>
   );
 }

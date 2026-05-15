@@ -9,12 +9,12 @@ const teamMembers = [
   },
     {
     name: "Samuel Ikani",
-    role: "Managing Partner",
+    role: "Managing Partner/CEO",
     image: "/samuel.jpg",
   },
   {
   name: "Favour Alor",
-  role: "Faculty Lead",
+  role: "Faculty Lead:Training & Capacity Building",
   department: "Training & Capacity Building",
   image: "/alor.jpg",
 },

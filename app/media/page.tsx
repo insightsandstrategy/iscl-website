@@ -2,17 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const featuredEvent = {
-  title: "National Stakeholder Engagement Workshop",
+  title: " The Main Ingredient For Policy Development",
   description:
-    "ISCL continues to drive evidence-based development through strategic stakeholder engagements, policy discussions, field activities, and capacity-building programmes across sectors.",
-  image: "/media/featured.jpg",
-  date: "May 2026",
+    "Policy development is a structured, iterative process of creating, implementing, and evaluating guidelines to address specific issues or govern behaviour, usually consisting of identifying problems, setting agendas, formulating solutions, implementing, and evaluating outcomes. It transforms goals into actionable rules to ensure compliance, mitigate risks, and enhance effectiveness.",
+  image: "/media.jpg",
+  date: "April 2026",
   location: "Abuja, Nigeria",
 };
 
 const activities = [
   {
-    title: "Training & Capacity Building Session",
+    title: "BUILDING BETTER POLICIES STARTS WITH THE RIGHT SKILL",
     category: "Training",
     date: "April 2026",
     image: "/media/activity1.jpg",
