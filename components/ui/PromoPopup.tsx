@@ -55,8 +55,7 @@ export default function PromoPopup() {
               </h2>
 
               <p className="mt-4 md:mt-6 text-white/75 text-sm md:text-lg leading-relaxed">
-                Empowering Policies, Economies & Development
-                through Insights.
+                Empowering Policies, Organisations & People with Insights.
               </p>
 
               <div className="mt-6 md:mt-8 flex flex-wrap gap-3 md:gap-4">

@@ -51,7 +51,7 @@ const teamMembers = [
 {
   name: "Dr. Aderonke Folagbade",
   role: "Volunteer Advisor",
-  image: "/ade.jpg",
+  image: "/dr.jpg",
   linkedin: "https://www.linkedin.com/in/aderonke-folagbade-5538a43b",
 },
 
