@@ -51,7 +51,7 @@ const teamMembers = [
 {
   name: "Dr. Aderonke Folagbade",
   role: "Volunteer Advisor",
-  image: "/aderonke.jpg",
+  image: "/ade.jpg",
 },
 
 {
