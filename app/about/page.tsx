@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import Audience from "@/components/sections/Audience";
+import Process from "@/components/sections/Process";
+import Resources from "@/components/sections/Resources";
 
 export default function AboutPage() {
   return (
@@ -270,6 +273,14 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      {/* SECTORS WE SERVE */}
+      <Audience />
+
+      {/* OUR APPROACH */}
+      <Process />
+
+      {/* TECHNOLOGY & TOOLS */}
+      <Resources />
 
       {/* CTA */}
       <section className="py-20 text-center bg-white">

@@ -94,6 +94,21 @@ export default function Navbar() {
                   Partners
                 </Link>
 
+                
+<Link
+  href="/about/privacy-policy"
+  className="block px-6 py-4 text-[#000066] hover:bg-[#F8F9FC]"
+>
+  Privacy Policy
+</Link>
+
+<Link
+  href="/about/terms"
+  className="block px-6 py-4 text-[#000066] hover:bg-[#F8F9FC]"
+>
+  Terms & Conditions
+</Link>
+
               </div>
 
             </div>
@@ -199,6 +214,20 @@ export default function Navbar() {
                 >
                   Partners
                 </Link>
+
+                <Link
+  href="/about/privacy-policy"
+  onClick={() => setMobileMenuOpen(false)}
+>
+  Privacy Policy
+</Link>
+
+<Link
+  href="/about/terms"
+  onClick={() => setMobileMenuOpen(false)}
+>
+  Terms & Conditions
+</Link>
 
               </div>
 

@@ -20,10 +20,11 @@ export default function Projects() {
         <div className="mt-16 grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-            />
+  key={index}
+  title={project.title}
+  description={project.description}
+  slug={project.slug}
+/>
           ))}
         </div>
 

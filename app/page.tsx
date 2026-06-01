@@ -17,13 +17,10 @@ export default function Home() {
     <PromoPopup />
       <Hero />
       <Services />
-      <Audience />  
-      <Resources />
       <Process />
       <WhyISCL />
       <Projects />
       <Partners />
-      <Trust />
       <CTA />
       <Footer />
     </>
