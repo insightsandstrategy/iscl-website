@@ -1,10 +1,77 @@
 "use client";
 
+import { useState } from "react";
 import FormInput from "./FormInput";
 
 export default function ApplyForm() {
+  const [form, setForm] = useState({
+    org_name: "",
+    email: "",
+    country: "",
+    sector: "",
+    program: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            sheet: "Service Applications",
+            ...form,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        setMessage("Application submitted successfully.");
+
+        setForm({
+          org_name: "",
+          email: "",
+          country: "",
+          sector: "",
+          program: "",
+        });
+      } else {
+        setMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage("Unable to submit form. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <form className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-8">
 
       {/* ORGANIZATION */}
       <div>
@@ -13,10 +80,41 @@ export default function ApplyForm() {
         </h3>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <FormInput label="Organization Name" name="org_name" />
-          <FormInput label="Email Address" name="email" type="email" />
-          <FormInput label="Country" name="country" />
-          <FormInput label="Sector" name="sector" placeholder="Health, Education..." />
+
+          <FormInput
+            label="Organization Name"
+            name="org_name"
+            value={form.org_name}
+            onChange={handleChange}
+            required
+          />
+
+          <FormInput
+            label="Email Address"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+
+          <FormInput
+            label="Country"
+            name="country"
+            value={form.country}
+            onChange={handleChange}
+            required
+          />
+
+          <FormInput
+            label="Sector"
+            name="sector"
+            placeholder="Health, Education..."
+            value={form.sector}
+            onChange={handleChange}
+            required
+          />
+
         </div>
       </div>
 
@@ -26,19 +124,44 @@ export default function ApplyForm() {
           Program Information
         </h3>
 
-        <div className="mt-6">
-          <label className="text-sm font-medium text-gray-700">Program Description</label>
+        <div>
+
+          <label className="text-sm font-medium text-gray-700">
+            Program Description
+          </label>
+
           <textarea
             name="program"
             rows={5}
+            value={form.program}
+            onChange={handleChange}
+            required
             className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#000066]"
           />
+
         </div>
       </div>
 
+      {/* MESSAGE */}
+      {message && (
+        <div
+          className={`rounded-md p-4 text-sm ${
+            message.includes("successfully")
+              ? "bg-green-100 text-green-700"
+              : "bg-red-100 text-red-700"
+          }`}
+        >
+          {message}
+        </div>
+      )}
+
       {/* SUBMIT */}
-      <button className="w-full py-4 bg-[#FEC619] text-black rounded-md hover:opacity-90 transition">
-        Submit Application
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full py-4 bg-[#FEC619] text-black rounded-md hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {loading ? "Submitting..." : "Submit Application"}
       </button>
 
     </form>

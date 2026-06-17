@@ -1,10 +1,83 @@
 "use client";
 
+import { useState } from "react";
 import FormInput from "./FormInput";
 
 export default function ProjectForm() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    phone: "",
+    type: "",
+    timeline: "",
+    description: "",
+    budget: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            sheet: "Project Requests",
+            ...form,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        setMessage("Project request submitted successfully.");
+
+        setForm({
+          name: "",
+          email: "",
+          organization: "",
+          phone: "",
+          type: "",
+          timeline: "",
+          description: "",
+          budget: "",
+        });
+      } else {
+        setMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage("Unable to submit form. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <form className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-8">
 
       {/* SECTION 1: BASIC INFO */}
       <div>
@@ -13,10 +86,39 @@ export default function ProjectForm() {
         </h3>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <FormInput label="Full Name" name="name" />
-          <FormInput label="Email Address" name="email" type="email" />
-          <FormInput label="Organization" name="organization" />
-          <FormInput label="Phone Number" name="phone" />
+
+          <FormInput
+            label="Full Name"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+
+          <FormInput
+            label="Email Address"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+
+          <FormInput
+            label="Organization"
+            name="organization"
+            value={form.organization}
+            onChange={handleChange}
+          />
+
+          <FormInput
+            label="Phone Number"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            required
+          />
+
         </div>
       </div>
 
@@ -27,17 +129,41 @@ export default function ProjectForm() {
         </h3>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <FormInput label="Project Type" name="type" placeholder="e.g. Evaluation, Survey..." />
-          <FormInput label="Timeline" name="timeline" placeholder="e.g. 3 months" />
+
+          <FormInput
+            label="Project Type"
+            name="type"
+            placeholder="e.g. Evaluation, Survey..."
+            value={form.type}
+            onChange={handleChange}
+            required
+          />
+
+          <FormInput
+            label="Timeline"
+            name="timeline"
+            placeholder="e.g. 3 months"
+            value={form.timeline}
+            onChange={handleChange}
+          />
+
         </div>
 
         <div className="mt-6">
-          <label className="text-sm font-medium text-gray-700">Project Description</label>
+
+          <label className="text-sm font-medium text-gray-700">
+            Project Description
+          </label>
+
           <textarea
             name="description"
             rows={5}
+            value={form.description}
+            onChange={handleChange}
+            required
             className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#000066]"
           />
+
         </div>
       </div>
 
@@ -47,12 +173,35 @@ export default function ProjectForm() {
           Budget & Scope
         </h3>
 
-        <FormInput label="Estimated Budget" name="budget" placeholder="$5,000 - $20,000" />
+        <FormInput
+          label="Estimated Budget"
+          name="budget"
+          placeholder="$5,000 - $20,000"
+          value={form.budget}
+          onChange={handleChange}
+        />
       </div>
 
+      {/* MESSAGE */}
+      {message && (
+        <div
+          className={`rounded-md p-4 text-sm ${
+            message.includes("successfully")
+              ? "bg-green-100 text-green-700"
+              : "bg-red-100 text-red-700"
+          }`}
+        >
+          {message}
+        </div>
+      )}
+
       {/* SUBMIT */}
-      <button className="w-full py-4 bg-[#000066] text-white rounded-md hover:bg-opacity-90 transition">
-        Submit Project Request
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full py-4 bg-[#000066] text-white rounded-md hover:bg-opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {loading ? "Submitting..." : "Submit Project Request"}
       </button>
 
     </form>
