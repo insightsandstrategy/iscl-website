@@ -17,7 +17,7 @@ export default function CEOInsights() {
 
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
             Explore articles, reflections, and thought leadership pieces by
-            Samuel Ikani on Monitoring & Evaluation, public policy,
+            Samuel Ikani on Monitoring & Evaluation, public polic,
             governance, research methods, development systems, and
             evidence-based decision making.
           </p>
