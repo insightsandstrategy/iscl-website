@@ -33,35 +33,32 @@ export default function ApplyForm() {
     setMessage("");
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            sheet: "Service Applications",
-            ...form,
-          }),
-        }
-      );
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
-      const result = await response.json();
-
-      if (result.success) {
-        setMessage("Application submitted successfully.");
-
-        setForm({
-          org_name: "",
-          email: "",
-          country: "",
-          sector: "",
-          program: "",
-        });
-      } else {
-        setMessage("Something went wrong. Please try again.");
+      if (!scriptUrl) {
+        throw new Error(
+          "NEXT_PUBLIC_GOOGLE_SCRIPT_URL is not defined."
+        );
       }
+
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify({
+          sheet: "Service Applications",
+          ...form,
+        }),
+      });
+
+      setMessage("Application submitted successfully.");
+
+      setForm({
+        org_name: "",
+        email: "",
+        country: "",
+        sector: "",
+        program: "",
+      });
     } catch (error) {
       console.error(error);
       setMessage("Unable to submit form. Please try again later.");

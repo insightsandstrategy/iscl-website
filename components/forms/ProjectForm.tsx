@@ -36,38 +36,35 @@ export default function ProjectForm() {
     setMessage("");
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            sheet: "Project Requests",
-            ...form,
-          }),
-        }
-      );
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
-      const result = await response.json();
-
-      if (result.success) {
-        setMessage("Project request submitted successfully.");
-
-        setForm({
-          name: "",
-          email: "",
-          organization: "",
-          phone: "",
-          type: "",
-          timeline: "",
-          description: "",
-          budget: "",
-        });
-      } else {
-        setMessage("Something went wrong. Please try again.");
+      if (!scriptUrl) {
+        throw new Error(
+          "NEXT_PUBLIC_GOOGLE_SCRIPT_URL is not defined."
+        );
       }
+
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify({
+          sheet: "Project Requests",
+          ...form,
+        }),
+      });
+
+      setMessage("Project request submitted successfully.");
+
+      setForm({
+        name: "",
+        email: "",
+        organization: "",
+        phone: "",
+        type: "",
+        timeline: "",
+        description: "",
+        budget: "",
+      });
     } catch (error) {
       console.error(error);
       setMessage("Unable to submit form. Please try again later.");
