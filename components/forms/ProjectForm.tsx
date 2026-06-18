@@ -122,7 +122,7 @@ export default function ProjectForm() {
       {/* SECTION 2: PROJECT DETAILS */}
       <div>
         <h3 className="text-xl font-semibold text-[#000066] mb-4">
-          Project Details
+          Projectsdhhh Details
         </h3>
 
         <div className="grid md:grid-cols-2 gap-6">
