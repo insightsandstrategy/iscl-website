@@ -198,7 +198,7 @@ export default function ProjectForm() {
         disabled={loading}
         className="w-full py-4 bg-[#000066] text-white rounded-md hover:bg-opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {loading ? "Submitting..." : "Submit Project Request"}
+        {loading ? "Submitting..." : "Submit Projecgggt Request"}
       </button>
 
     </form>
