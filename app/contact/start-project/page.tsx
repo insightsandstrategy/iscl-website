@@ -37,17 +37,30 @@ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
   try {
-    const response = await fetch("/api/start-project", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
-    if (!response.ok) {
-      throw new Error("Failed");
+    if (!scriptUrl) {
+      throw new Error(
+        "NEXT_PUBLIC_GOOGLE_SCRIPT_URL is not defined."
+      );
     }
+
+    await fetch(scriptUrl, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify({
+        sheet: "Project Requests",
+
+        name: form.name,
+        email: form.email,
+        organization: form.organization,
+
+        type: form.projectType,
+        budget: form.budget,
+        timeline: form.timeline,
+        description: form.description,
+      }),
+    });
 
     setSubmitted(true);
 
@@ -62,6 +75,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       consent: false,
     });
   } catch (error) {
+    console.error(error);
     alert("Unable to submit form. Please try again.");
   }
 };

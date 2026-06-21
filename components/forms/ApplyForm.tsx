@@ -25,47 +25,58 @@ export default function ApplyForm() {
   };
 
   const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
-    e.preventDefault();
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
 
-    setLoading(true);
-    setMessage("");
+  setLoading(true);
+  setMessage("");
 
-    try {
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+  try {
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
-      if (!scriptUrl) {
-        throw new Error(
-          "NEXT_PUBLIC_GOOGLE_SCRIPT_URL is not defined."
-        );
-      }
-
-      await fetch(scriptUrl, {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify({
-          sheet: "Service Applications",
-          ...form,
-        }),
-      });
-
-      setMessage("Application submitted successfully.");
-
-      setForm({
-        org_name: "",
-        email: "",
-        country: "",
-        sector: "",
-        program: "",
-      });
-    } catch (error) {
-      console.error(error);
-      setMessage("Unable to submit form. Please try again later.");
-    } finally {
-      setLoading(false);
+    if (!scriptUrl) {
+      throw new Error(
+        "NEXT_PUBLIC_GOOGLE_SCRIPT_URL is not defined."
+      );
     }
-  };
+
+    await fetch(scriptUrl, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify({
+        sheet: "Service Applications",
+
+        name: "",
+
+        email: form.email,
+
+        phone: "",
+
+        organization: form.org_name,
+
+        service: `${form.sector} (${form.country})`,
+
+        message: form.program,
+      }),
+    });
+
+    setMessage("Application submitted successfully.");
+
+    setForm({
+      org_name: "",
+      email: "",
+      country: "",
+      sector: "",
+      program: "",
+    });
+  } catch (error) {
+    console.error(error);
+    setMessage("Unable to submit form. Please try again later.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
