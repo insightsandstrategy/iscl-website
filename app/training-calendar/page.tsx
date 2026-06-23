@@ -4,11 +4,11 @@ export default function TrainingCalendarPage() {
   const programmes = [
     {
       month: "July 2026",
-      theme: "Foundations of Development Excellence",
-      programme: "Project DPro Certification",
-      dates: "20th – 31st (22nd &29th excluded)",
-      audience: "Programme Officers, Project Managers",
-      competency: "Project Cycle, Design, Planning",
+      theme: "MEAL — Systems That Drive Learning",
+      programme: "MEAL DPro Certification",
+      dates: "20th – 31st (23rd, 26th & 30th excluded)",
+      audience: "MEL Officers, Programme Managers",
+      competency: "MEAL Frameworks, Adaptive Management",
     },
     {
       month: "August 2026",
